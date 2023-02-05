@@ -12,13 +12,14 @@ func main() {
 	initFolder()
 	http.HandleFunc("/", handlerIndex)
 	http.HandleFunc("/upload", upload)
+	http.HandleFunc("/download", download)
 	http.ListenAndServe(":8080", nil)
 }
 
 func handlerIndex(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("content-type", "text/json")
 	w.WriteHeader(http.StatusOK)
-	result := ResultErr{Code: 401, Msg: "禁止访问", Data: "error"}
+	result := ResultInfo{Code: 401, Msg: "禁止访问", Data: "error"}
 	msg, _ := json.Marshal(result)
 	w.Write(msg)
 }
