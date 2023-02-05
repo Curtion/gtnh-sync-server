@@ -13,7 +13,7 @@ type Result struct {
 	Msg  string  `json:"msg"`
 	Data Content `json:"data"`
 }
-type ResultStr struct {
+type ResultErr struct {
 	Code int    `json:"code"`
 	Msg  string `json:"msg"`
 	Data string `json:"data"`
